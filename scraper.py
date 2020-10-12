@@ -124,7 +124,7 @@ def get_start_range(what = WHAT, where = WHERE):
 	# Scrape the search count string from Indeed job page.
 	for content in job_soup.find_all('div', {'id': 'searchCount'}):
 		search_count = content.text.lstrip()
-
+	print(search_count)
 	# Extract total number of jobs found from the search_count string.
 	pattern = r'\s[0-9]+$'
 	total_jobs = int(re.findall(pattern, search_count)[0].lstrip())
